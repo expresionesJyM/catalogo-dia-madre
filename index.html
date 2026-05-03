@@ -9,32 +9,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --rose:       #d4547a;
-      --rose-dk:    #b03a60;
-      --rose-lt:    #f7c5d5;
-      --blush:      #fce8ef;
-      --blush-dk:   #f5d0dc;
-      --gold:       #c89b5a;
-      --gold-lt:    #f5e9d5;
-      --lilac:      #b07ab0;
-      --lilac-lt:   #ecdcec;
-      --cream:      #fdf5f7;
-      --dark:       #2a0e1a;
-      --muted:      #8a4460;
-      --border:     #eabccb;
-      --white:      #ffffff;
+      --rose:    #d4547a;
+      --rose-dk: #b03a60;
+      --rose-lt: #f7c5d5;
+      --blush:   #fce8ef;
+      --blush-dk:#f5d0dc;
+      --gold:    #c89b5a;
+      --gold-lt: #f5e9d5;
+      --lilac-lt:#ecdcec;
+      --cream:   #fdf5f7;
+      --dark:    #2a0e1a;
+      --muted:   #8a4460;
+      --border:  #eabccb;
+      --white:   #ffffff;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--cream);
       color: var(--dark);
       overflow-x: hidden;
     }
-
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0;
@@ -45,7 +41,7 @@
       pointer-events: none;
     }
 
-    /* ─── NAVBAR ─── */
+    /* ── NAVBAR ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: linear-gradient(135deg, var(--rose-dk) 0%, var(--rose) 60%, #e06898 100%);
@@ -55,15 +51,12 @@
       box-shadow: 0 4px 24px rgba(176,58,96,.25);
     }
     nav::after {
-      content: '🌸 · ✿ · 🌷 · ✿ · 🌸 · ✿ · 🌷 · ✿ · 🌸 · ✿ · 🌷 · ✿ · 🌸';
+      content: '🌸 · ✿ · 🌷 · ✿ · 🌸 · ✿ · 🌷 · ✿ · 🌸';
       position: absolute; bottom: -18px; left: 0; right: 0;
       text-align: center; font-size: .55rem; letter-spacing: .15em;
       color: var(--rose); opacity: .4; pointer-events: none;
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo img {
       width: 40px; height: 40px; border-radius: 50%;
       object-fit: cover; border: 2px solid rgba(255,255,255,.5);
@@ -74,9 +67,7 @@
       font-size: 1.3rem; font-style: italic; font-weight: 700;
       color: #fff; letter-spacing: .02em;
     }
-    .nav-cats {
-      display: flex; gap: 4px; list-style: none;
-    }
+    .nav-cats { display: flex; gap: 4px; list-style: none; }
     .nav-cats a {
       padding: 6px 14px; border-radius: 20px;
       font-size: .76rem; font-weight: 500; letter-spacing: .05em;
@@ -84,11 +75,9 @@
       color: rgba(255,255,255,.85);
       transition: background .18s, color .18s;
     }
-    .nav-cats a:hover, .nav-cats a.active {
-      background: rgba(255,255,255,.22); color: #fff;
-    }
+    .nav-cats a:hover, .nav-cats a.active { background: rgba(255,255,255,.22); color: #fff; }
 
-    /* ─── FAB WHATSAPP ─── */
+    /* ── FAB WHATSAPP ── */
     .fab-wa {
       position: fixed; bottom: 28px; right: 28px; z-index: 200;
       width: 56px; height: 56px; border-radius: 50%;
@@ -100,37 +89,25 @@
       transition: transform .18s, box-shadow .18s, background .18s;
       backdrop-filter: blur(6px);
     }
-    .fab-wa:hover {
-      transform: translateY(-2px);
-      background: var(--blush);
-      box-shadow: 0 10px 24px rgba(176,58,96,.18);
-    }
+    .fab-wa:hover { transform: translateY(-2px); background: var(--blush); box-shadow: 0 10px 24px rgba(176,58,96,.18); }
     .fab-wa svg { width: 26px; height: 26px; fill: var(--rose-dk); }
 
-    /* ─── BANNER ─── */
+    /* ── BANNER ── */
     .banner {
-      position: relative;
-      width: 100%; height: 480px;
+      position: relative; width: 100%; height: 480px;
       overflow: hidden; margin-top: 10px;
     }
     .banner-bg {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
+      position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: cover; object-position: center;
       display: block; background: var(--blush);
     }
     .banner-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(100deg,
-        rgba(253,245,247,.95) 0%,
-        rgba(253,245,247,.80) 42%,
-        rgba(253,245,247,.10) 100%);
+      background: linear-gradient(100deg, rgba(253,245,247,.95) 0%, rgba(253,245,247,.80) 42%, rgba(253,245,247,.10) 100%);
     }
     .banner-deco { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .petal {
-      position: absolute; font-size: 1.4rem;
-      animation: floatPetal 8s ease-in-out infinite; opacity: .4;
-    }
+    .petal { position: absolute; font-size: 1.4rem; animation: floatPetal 8s ease-in-out infinite; opacity: .4; }
     .petal:nth-child(1) { top: 10%; right: 18%; animation-delay: 0s; }
     .petal:nth-child(2) { top: 60%; right: 8%;  animation-delay: 2s; font-size: 1rem; }
     .petal:nth-child(3) { top: 30%; right: 35%; animation-delay: 4s; font-size: .9rem; }
@@ -140,20 +117,17 @@
       50%      { transform: translateY(-14px) rotate(12deg); }
     }
     .banner-content {
-      position: relative; z-index: 2;
-      height: 100%;
+      position: relative; z-index: 2; height: 100%;
       display: flex; flex-direction: column; justify-content: center;
       padding: 0 64px; max-width: 600px;
     }
     .banner-eyebrow {
       font-size: .68rem; font-weight: 600; letter-spacing: .22em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 14px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
       display: flex; align-items: center; gap: 8px;
     }
     .banner-eyebrow::before, .banner-eyebrow::after {
-      content: ''; flex: 1; max-width: 28px;
-      height: 1px; background: var(--gold); opacity: .5;
+      content: ''; flex: 1; max-width: 28px; height: 1px; background: var(--gold); opacity: .5;
     }
     .banner-content h1 {
       font-family: 'Playfair Display', serif;
@@ -161,12 +135,9 @@
       color: var(--dark); margin-bottom: 16px;
     }
     .banner-content h1 em { font-style: italic; color: var(--rose); display: block; }
-    .banner-sub {
-      font-size: .9rem; color: var(--muted); line-height: 1.7;
-      max-width: 340px;
-    }
+    .banner-sub { font-size: .9rem; color: var(--muted); line-height: 1.7; max-width: 340px; }
 
-    /* ─── PILLS ─── */
+    /* ── PILLS ── */
     .cats-bar {
       padding: 22px 32px 18px;
       display: flex; gap: 10px; flex-wrap: wrap;
@@ -178,13 +149,12 @@
       padding: 8px 22px; border-radius: 30px;
       font-size: .76rem; font-weight: 500; letter-spacing: .06em;
       text-transform: uppercase; cursor: pointer; border: 1.5px solid var(--border);
-      background: var(--white); color: var(--muted);
-      transition: all .18s;
+      background: var(--white); color: var(--muted); transition: all .18s;
     }
     .cat-pill:hover { background: var(--blush); color: var(--rose-dk); }
     .cat-pill.active { background: var(--rose); color: #fff; border-color: var(--rose); box-shadow: 0 2px 10px rgba(212,84,122,.3); }
 
-    /* ─── SECCIÓN ─── */
+    /* ── SECCIÓN ── */
     .cat-section { padding: 48px 32px 20px; position: relative; z-index: 1; }
     .cat-section-header {
       display: flex; align-items: baseline;
@@ -200,12 +170,15 @@
       background: var(--blush); padding: 4px 12px; border-radius: 20px;
     }
 
-    /* ─── GRID ─── */
+    /* ── GRID ── */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px; margin-bottom: 40px;
+      align-items: start;
     }
+
+    /* ── CARD NORMAL ── */
     .product-card {
       background: var(--white);
       border: 1.5px solid var(--border);
@@ -220,10 +193,7 @@
       background: linear-gradient(160deg, rgba(252,232,239,.4) 0%, transparent 60%);
       pointer-events: none;
     }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(212,84,122,.16);
-    }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(212,84,122,.16); }
     .product-badge {
       position: absolute; top: 12px; left: 12px; z-index: 5;
       background: var(--gold); color: #fff;
@@ -236,21 +206,10 @@
       background: linear-gradient(160deg, var(--blush) 0%, var(--lilac-lt) 100%);
       position: relative; z-index: 1;
     }
-    .product-img[src=""] {
-      visibility: hidden;
-      background: linear-gradient(160deg, var(--blush) 0%, var(--blush-dk) 100%);
-    }
     .product-info { padding: 16px 18px 18px; position: relative; z-index: 1; }
-    .product-name {
-      display: none;
-    }
-    .product-desc {
-      font-size: .73rem; color: var(--muted);
-      margin-bottom: 12px; line-height: 1.45;
-    }
-    .product-footer {
-      display: flex; align-items: center; justify-content: space-between;
-    }
+    .product-name { display: none; }
+    .product-desc { font-size: .73rem; color: var(--muted); margin-bottom: 12px; line-height: 1.45; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
     .product-price {
       font-size: 1.05rem; font-weight: 600; color: var(--rose-dk);
       font-family: 'Playfair Display', serif;
@@ -258,42 +217,165 @@
     .product-btn {
       display: flex; align-items: center; justify-content: center;
       width: 34px; height: 34px; border-radius: 50%;
-      background: var(--blush);
-      color: var(--rose-dk); border: 1.5px solid var(--border);
+      background: var(--blush); color: var(--rose-dk); border: 1.5px solid var(--border);
       cursor: pointer; font-size: 1.05rem;
       transition: transform .15s, box-shadow .15s, background .15s;
       box-shadow: 0 3px 10px rgba(176,58,96,.10);
     }
-    .product-btn:hover {
-      transform: scale(1.06);
-      background: #f6dde6;
-      box-shadow: 0 5px 14px rgba(176,58,96,.16);
+    .product-btn:hover { transform: scale(1.06); background: #f6dde6; box-shadow: 0 5px 14px rgba(176,58,96,.16); }
+
+    /* ════════════════════════════════════════
+       CARD ESPECIAL — PROMO CAJA
+    ════════════════════════════════════════ */
+    .caja-promo-card {
+      background: var(--white);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 6px 28px rgba(200,155,90,.18);
     }
 
+    .caja-promo-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--gold-lt) 0%, var(--blush) 100%);
+    }
+    .caja-promo-slider img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+    .caja-promo-slider img.slide-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .slide-dots {
+      position: absolute; bottom: 10px; left: 0; right: 0;
+      display: flex; justify-content: center; gap: 6px; z-index: 4;
+    }
+    .slide-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      transition: background .3s, transform .3s;
+    }
+    .slide-dot.active { background: #fff; transform: scale(1.3); }
+
+    .caja-promo-badge {
+      position: absolute; top: 12px; left: 12px; z-index: 5;
+      background: linear-gradient(135deg, var(--gold) 0%, #e0b96a 100%);
+      color: #fff;
+      font-size: .58rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; border-radius: 20px; padding: 5px 12px;
+      box-shadow: 0 3px 10px rgba(200,155,90,.35);
+    }
+
+    /* info inferior — sin botón, solo texto informativo */
+    .caja-promo-info {
+      padding: 18px 18px 20px;
+      background: linear-gradient(160deg, var(--gold-lt) 0%, rgba(255,255,255,0) 80%);
+      position: relative;
+    }
+    .caja-promo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--dark); line-height: 1.25; margin-bottom: 6px;
+    }
+    .caja-promo-title em { font-style: italic; color: var(--gold); }
+    .caja-promo-sub {
+      font-size: .72rem; color: var(--muted); line-height: 1.5; margin-bottom: 10px;
+    }
+    .caja-promo-price-tag {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--gold);
+    }
+    .caja-promo-price-tag span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .65rem; font-weight: 500; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .1em;
+      vertical-align: middle; margin-right: 4px;
+    }
+
+    .caja-promo-deco {
+      position: absolute; bottom: 14px; right: 14px;
+      font-size: 1.6rem; opacity: .12; pointer-events: none;
+      animation: floatPetal 6s ease-in-out infinite;
+    }
+
+    /* ── DIVISOR ── */
     .section-divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
       margin: 0 32px;
     }
 
-    /* ─── FOOTER ─── */
+    /* ── ÚLTIMAS UNIDADES ── */
+    .ultimas-section { padding: 40px 32px 28px; position: relative; z-index: 1; }
+    .ultimas-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .ultimas-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; font-weight: 700; color: var(--dark);
+    }
+    .ultimas-title em { font-style: italic; color: var(--rose); }
+    .ultimas-badge {
+      background: linear-gradient(135deg, #e05c8a, var(--rose-dk));
+      color: #fff; font-size: .6rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 20px;
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    @keyframes pulse-badge {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .85; transform: scale(1.04); }
+    }
+    .ultimas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 360px));
+      gap: 22px; justify-content: start;
+    }
+    .ultima-card {
+      background: var(--white); border: 2px solid var(--rose-lt);
+      border-radius: 22px; overflow: hidden; cursor: pointer;
+      transition: transform .2s, box-shadow .2s; position: relative;
+      box-shadow: 0 4px 18px rgba(212,84,122,.09);
+    }
+    .ultima-card::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(160deg, rgba(252,232,239,.5) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .ultima-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(212,84,122,.20); }
+    .ultima-badge-agotando {
+      position: absolute; top: 12px; left: 12px; z-index: 5;
+      background: linear-gradient(135deg, #e05c8a, var(--rose-dk));
+      color: #fff; font-size: .58rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; border-radius: 20px; padding: 5px 11px;
+      box-shadow: 0 3px 10px rgba(176,58,96,.25);
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    .ultima-card .product-img { aspect-ratio: 4/3; }
+
+    /* ── FOOTER ── */
     footer {
       text-align: center; padding: 36px 20px 90px;
       font-size: .72rem; color: var(--muted); line-height: 2.2;
-      border-top: 1px solid var(--blush-dk);
-      position: relative; z-index: 1;
+      border-top: 1px solid var(--blush-dk); position: relative; z-index: 1;
     }
     footer .footer-brand {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem; font-style: italic; color: var(--rose);
       display: block; margin-bottom: 4px;
     }
-    footer .footer-flowers {
-      font-size: .9rem; letter-spacing: .15em; opacity: .5;
-      margin-bottom: 6px; display: block;
-    }
+    footer .footer-flowers { font-size: .9rem; letter-spacing: .15em; opacity: .5; margin-bottom: 6px; display: block; }
 
-    /* ─── RESPONSIVE ─── */
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 640px) {
       nav { padding: 0 16px; }
@@ -306,129 +388,60 @@
       .section-divider { margin: 0 16px; }
       .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .fab-wa { bottom: 20px; right: 20px; width: 54px; height: 54px; }
+      .ultimas-section { padding: 28px 16px 14px; }
+      .ultimas-grid { grid-template-columns: 1fr; }
     }
 
-    /* ─── DETALLE DE PRODUCTO ─── */
+    /* ── DETALLE ── */
     .detail-page {
-      display: none;
-      min-height: calc(100vh - 64px);
-      padding: 42px 32px 80px;
-      position: relative;
-      z-index: 2;
+      display: none; min-height: calc(100vh - 64px);
+      padding: 42px 32px 80px; position: relative; z-index: 2;
     }
     .detail-wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(280px, 520px) 1fr;
-      gap: 44px;
-      align-items: start;
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: minmax(280px, 520px) 1fr;
+      gap: 44px; align-items: start;
     }
     .detail-image {
-      width: 100%;
-      max-height: 690px;
-      object-fit: cover;
-      border-radius: 18px;
-      background: var(--blush);
+      width: 100%; max-height: 690px; object-fit: cover;
+      border-radius: 18px; background: var(--blush);
       border: 1px solid var(--border);
       box-shadow: 0 16px 42px rgba(212,84,122,.12);
     }
     .detail-card {
-      background: rgba(255,255,255,.65);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
+      background: rgba(255,255,255,.65); border: 1px solid var(--border);
+      border-radius: 20px; padding: 28px;
     }
-    .detail-back {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: .82rem;
-      letter-spacing: .04em;
-    }
-    .detail-category {
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .detail-price {
-      font-family: 'Playfair Display', serif;
-      color: var(--rose-dk);
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
-    .detail-description {
-      color: var(--dark);
-      font-size: 1rem;
-      line-height: 1.85;
-      margin-bottom: 18px;
-      white-space: pre-line;
-    }
-    .detail-status {
-      display: inline-block;
-      margin-bottom: 24px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: var(--blush);
-      color: var(--rose-dk);
-      font-size: .82rem;
-      font-weight: 600;
-    }
+    .detail-back { display: inline-block; margin-bottom: 16px; color: var(--muted); text-decoration: none; font-size: .82rem; letter-spacing: .04em; }
+    .detail-category { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); font-weight: 600; margin-bottom: 12px; }
+    .detail-price { font-family: 'Playfair Display', serif; color: var(--rose-dk); font-size: 1.6rem; margin-bottom: 18px; font-weight: 700; }
+    .detail-description { color: var(--dark); font-size: 1rem; line-height: 1.85; margin-bottom: 18px; white-space: pre-line; }
+    .detail-status { display: inline-block; margin-bottom: 24px; padding: 7px 14px; border-radius: 999px; background: var(--blush); color: var(--rose-dk); font-size: .82rem; font-weight: 600; }
+    .caja-addon { margin: 0 0 22px; border: 1.5px solid var(--border); border-radius: 16px; padding: 16px 18px; background: var(--gold-lt); }
+    .caja-addon-title { font-size: .78rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; display: flex; align-items: center; gap: 7px; }
+    .caja-addon-title::before { content: '📦'; font-size: .9rem; }
+    .caja-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .caja-opt { padding: 8px 16px; border-radius: 30px; border: 1.5px solid var(--border); background: var(--white); color: var(--muted); font-size: .76rem; font-weight: 500; cursor: pointer; transition: all .16s; }
+    .caja-opt:hover { background: var(--blush); color: var(--rose-dk); }
+    .caja-opt.selected { background: var(--rose); color: #fff; border-color: var(--rose); box-shadow: 0 2px 8px rgba(212,84,122,.28); }
     .detail-wa {
-      width: 100%;
-      min-height: 54px;
-      border-radius: 999px;
-      border: 1.5px solid var(--border);
+      width: 100%; min-height: 54px; border-radius: 999px; border: 1.5px solid var(--border);
       background: linear-gradient(135deg, #f7e4ea 0%, #f2d8e1 100%);
-      color: var(--rose-dk);
-      font-weight: 700;
-      letter-spacing: .04em;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(176,58,96,.10);
-      transition: transform .15s, box-shadow .15s, background .15s;
+      color: var(--rose-dk); font-weight: 700; letter-spacing: .04em; cursor: pointer;
+      box-shadow: 0 8px 20px rgba(176,58,96,.10); transition: transform .15s, box-shadow .15s, background .15s;
     }
-    .detail-wa:hover {
-      transform: translateY(-2px);
-      background: linear-gradient(135deg, #f5dbe4 0%, #ebcbd7 100%);
-      box-shadow: 0 10px 24px rgba(176,58,96,.16);
-    }
-    body.modo-detalle .banner,
-    body.modo-detalle .cats-bar,
-    body.modo-detalle #catalogo,
-    body.modo-detalle footer,
-    body.modo-detalle .fab-wa {
-      display: none !important;
-    }
-    body.modo-detalle .detail-page {
-      display: block;
-    }
+    .detail-wa:hover { transform: translateY(-2px); background: linear-gradient(135deg, #f5dbe4 0%, #ebcbd7 100%); box-shadow: 0 10px 24px rgba(176,58,96,.16); }
+    body.modo-detalle .banner, body.modo-detalle .cats-bar,
+    body.modo-detalle #catalogo, body.modo-detalle footer, body.modo-detalle .fab-wa { display: none !important; }
+    body.modo-detalle .detail-page { display: block; }
     @media (max-width: 800px) {
       .detail-page { padding: 24px 16px 60px; }
       .detail-wrap { grid-template-columns: 1fr; gap: 22px; }
       .detail-card { padding: 22px; }
     }
-
   </style>
 </head>
 <body>
-
-<!--
-GUÍA FINAL:
-Este archivo debe llamarse index.html y estar dentro de la carpeta:
-catalogo-dia-madre/
-
-Ruta del catálogo:
-https://expresionesjym.github.io/catalogo-dia-madre/
-
-Ejemplo de producto:
-https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-1
--->
-
 
 <!-- NAVBAR -->
 <nav>
@@ -438,8 +451,7 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
   </a>
   <ul class="nav-cats">
     <li><a href="#ramos-limpiapipas" class="active">Limpiapipas</a></li>
-    <li><a href="#peluches">Peluches</a></li>
-    <li><a href="#boxes">Boxes</a></li>
+    <li><a href="#ultimas-unidades">Últimas</a></li>
   </ul>
 </nav>
 
@@ -448,10 +460,8 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
   <img class="banner-bg" src="banner1.png" alt="Banner Día de la Madre"/>
   <div class="banner-overlay"></div>
   <div class="banner-deco">
-    <span class="petal">🌸</span>
-    <span class="petal">🌷</span>
-    <span class="petal">✿</span>
-    <span class="petal">🌸</span>
+    <span class="petal">🌸</span><span class="petal">🌷</span>
+    <span class="petal">✿</span><span class="petal">🌸</span>
   </div>
   <div class="banner-content">
     <p class="banner-eyebrow">Día de la Madre 2026</p>
@@ -464,12 +474,10 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
 <div class="cats-bar">
   <button class="cat-pill active" onclick="filtrar('todos',this)">Todos</button>
   <button class="cat-pill" onclick="filtrar('ramos-limpiapipas',this)">Ramos Limpiapipas</button>
-  <button class="cat-pill" onclick="filtrar('peluches',this)">Peluches</button>
-  <button class="cat-pill" onclick="filtrar('boxes',this)">Boxes</button>
+  <button class="cat-pill" onclick="filtrar('ultimas',this)">🔥 Últimas unidades</button>
 </div>
 
-
-<!-- PÁGINA DE DETALLE DEL PRODUCTO -->
+<!-- DETALLE -->
 <section class="detail-page" id="detalle-producto">
   <div class="detail-wrap">
     <img class="detail-image" id="detalle-img" src="" alt="Producto"/>
@@ -479,6 +487,14 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
       <p class="detail-price" id="detalle-precio"></p>
       <p class="detail-description" id="detalle-descripcion"></p>
       <span class="detail-status" id="detalle-disponible"></span>
+      <!-- OPCIONES DE CAJA: solo Sin caja / Con caja +S/18 -->
+      <div class="caja-addon" id="caja-addon-block" style="display:none">
+        <p class="caja-addon-title">¿Deseas agregar una caja?</p>
+        <div class="caja-options">
+          <button class="caja-opt" onclick="seleccionarCaja(this,'Sin caja','')">Sin caja</button>
+          <button class="caja-opt" onclick="seleccionarCaja(this,'Con caja','+S/ 18')">Con caja <strong>+S/ 18</strong></button>
+        </div>
+      </div>
       <button class="detail-wa" id="detalle-whatsapp">COMPRAR POR WHATSAPP</button>
     </div>
   </div>
@@ -492,202 +508,153 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
       <h2 class="cat-section-title">Ramos con <em>limpiapipas</em></h2>
       <span class="cat-count">8 productos</span>
     </div>
+
     <div class="products-grid">
 
-      <div class="product-card" onclick="pedirWA('Ramo Arcoíris','S/ 38.00','')">
+      <!-- ══ CARD INFORMATIVA CAJA PROMO — sin botón ══ -->
+      <div class="caja-promo-card">
+        <span class="caja-promo-badge">📦 ¡Dale más amor!</span>
+        <div class="caja-promo-slider" id="cajaSlider">
+          <img src="pipas-01-caja.jpg" alt="Ramo con caja 1" class="slide-active"/>
+          <img src="pipas-02-caja.jpg" alt="Ramo con caja 2"/>
+          <img src="pipas-03-caja.jpg" alt="Ramo con caja 3"/>
+          <img src="pipas-cover-caja.jpg" alt="Ramo con caja 4"/>
+          <img src="pipas-04-caja.jpg" alt="Ramo con caja 5"/>
+          <img src="pipas-05-caja.jpg" alt="Ramo con caja 6"/>
+        </div>
+        <div class="slide-dots" id="cajaDots"></div>
+        <div class="caja-promo-info">
+          <p class="caja-promo-title">Agrega una caja<br>a tu ramo <em>✨ solo</em></p>
+          <p class="caja-promo-sub">Transforma tu ramo en un regalo aún más especial. Al seleccionar un ramo podrás elegir agregar la caja.</p>
+          <p class="caja-promo-price-tag"><span>desde</span>S/ 18</p>
+          <span class="caja-promo-deco">🎁</span>
+        </div>
+      </div>
+
+      <!-- Ramos normales -->
+      <div class="product-card">
         <img class="product-img" src="pipas-01.jpg" alt="Ramo Arcoíris"/>
         <div class="product-info">
           <p class="product-name">Ramo Arcoíris</p>
-          <p class="product-desc">Limpiapipas multicolor · 20 flores</p>
+          <p class="product-desc">Solo 3 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 38</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Arcoíris','S/ 38.00','')">›</button>
+            <span class="product-price">S/ 43.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Ramo Corazones','S/ 35.00','')">
+      <div class="product-card">
         <img class="product-img" src="pipas-02.jpg" alt="Ramo Corazones"/>
         <div class="product-info">
           <p class="product-name">Ramo Corazones</p>
-          <p class="product-desc">Limpiapipas rosa y rojo · 15 flores</p>
+          <p class="product-desc">Solo 3 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 35</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Corazones','S/ 35.00','')">›</button>
+            <span class="product-price">S/ 59.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Mini Ramo','S/ 25.00','')">
+      <div class="product-card">
         <img class="product-img" src="pipas-03.jpg" alt="Mini Ramo"/>
         <div class="product-info">
           <p class="product-name">Mini Ramo</p>
-          <p class="product-desc">Limpiapipas pastel · 10 flores</p>
+          <p class="product-desc">Solo 3 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 25</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Mini Ramo','S/ 25.00','')">›</button>
+            <span class="product-price">S/ 65.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Ramo Gigante','S/ 60.00','')">
+      <div class="product-card">
         <span class="product-badge">⭐ Popular</span>
         <img class="product-img" src="pipas-cover.jpg" alt="Ramo Gigante"/>
         <div class="product-info">
           <p class="product-name">Ramo Gigante</p>
-          <p class="product-desc">Limpiapipas · 30 flores grandes</p>
+          <p class="product-desc">Solo 5 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 60</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Gigante','S/ 60.00','')">›</button>
+            <span class="product-price">S/ 70.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Ramo Arcoíris','S/ 38.00','')">
+      <div class="product-card">
         <img class="product-img" src="pipas-04.jpg" alt="Ramo Arcoíris"/>
         <div class="product-info">
           <p class="product-name">Ramo Arcoíris</p>
-          <p class="product-desc">Limpiapipas multicolor · 20 flores</p>
+          <p class="product-desc">Solo 8 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 38</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Arcoíris','S/ 38.00','')">›</button>
+            <span class="product-price">S/ 18.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Ramo Arcoíris','S/ 38.00','')">
+      <div class="product-card">
         <img class="product-img" src="pipas-05.jpg" alt="Ramo Arcoíris"/>
         <div class="product-info">
           <p class="product-name">Ramo Arcoíris</p>
-          <p class="product-desc">Limpiapipas multicolor · 20 flores</p>
+          <p class="product-desc">Solo 3 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 38</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Arcoíris','S/ 38.00','')">›</button>
+            <span class="product-price">S/ 45.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Ramo Arcoíris','S/ 38.00','')">
+      <div class="product-card">
         <img class="product-img" src="pipas-06.jpg" alt="Ramo Arcoíris"/>
         <div class="product-info">
           <p class="product-name">Ramo Arcoíris</p>
-          <p class="product-desc">Limpiapipas multicolor · 20 flores</p>
+          <p class="product-desc">Solo 3 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 38</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Arcoíris','S/ 38.00','')">›</button>
+            <span class="product-price">S/ 43.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Ramo Arcoíris','S/ 38.00','')">
+      <div class="product-card">
         <img class="product-img" src="pipas-07.jpg" alt="Ramo Arcoíris"/>
         <div class="product-info">
           <p class="product-name">Ramo Arcoíris</p>
-          <p class="product-desc">Limpiapipas multicolor · 20 flores</p>
+          <p class="product-desc">Solo 5 disponibles</p>
           <div class="product-footer">
-            <span class="product-price">S/ 38</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Ramo Arcoíris','S/ 38.00','')">›</button>
+            <span class="product-price">S/ 30.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
     </div>
   </section>
+
   <div class="section-divider"></div>
 
-
-  <!-- BOXES -->
-  <section class="cat-section" id="boxes" data-cat="boxes">
-    <div class="cat-section-header">
-      <h2 class="cat-section-title">Boxes <em>especiales</em></h2>
-      <span class="cat-count">4 productos</span>
+  <!-- ÚLTIMAS UNIDADES -->
+  <section class="ultimas-section" id="ultimas-unidades" data-cat="ultimas">
+    <div class="ultimas-header">
+      <h2 class="ultimas-title">Últimas <em>unidades</em></h2>
+      <span class="ultimas-badge">🔥 Casi agotado</span>
     </div>
-    <div class="products-grid">
+    <div class="ultimas-grid">
 
-      <div class="product-card" onclick="pedirWA('Box Clásico','S/ 75.00','')">
-        <img class="product-img" src="box-cover.jpg" alt="Box Clásico"/>
+      <div class="ultima-card product-card">
+        <span class="ultima-badge-agotando">🌹 ¡Solo 1 disponible!</span>
+        <img class="product-img" src="ramo-eterno.jpg" alt="Ramo Eterno" style="aspect-ratio:4/3"/>
         <div class="product-info">
-          <p class="product-name">Box Clásico</p>
-          <p class="product-desc">Caja + ramo cinta satinada</p>
+          <p class="product-name">Ramo Eterno</p>
+          <p class="product-desc">25 Rosas eternas · Solo 1 disponible</p>
           <div class="product-footer">
-            <span class="product-price">S/ 75</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Clásico','S/ 75.00','')">›</button>
+            <span class="product-price">S/ 116.00</span>
+            <button class="product-btn">›</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card" onclick="pedirWA('Box Sorpresa','S/ 95.00','')">
-        <span class="product-badge">⭐ Popular</span>
-        <img class="product-img" src="box-01.jpg" alt="Box Sorpresa"/>
-        <div class="product-info">
-          <p class="product-name">Box Sorpresa</p>
-          <p class="product-desc">Caja + ramo + peluche</p>
-          <div class="product-footer">
-            <span class="product-price">S/ 95</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Sorpresa','S/ 95.00','')">›</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="pedirWA('Box Amor','S/ 110.00','')">
-        <img class="product-img" src="box-02.jpg" alt="Box Amor"/>
-        <div class="product-info">
-          <p class="product-name">Box Amor</p>
-          <p class="product-desc">Caja corazón + ramo + chocolates</p>
-          <div class="product-footer">
-            <span class="product-price">S/ 110</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Amor','S/ 110.00','')">›</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="pedirWA('Box Personalizado','Desde S/ 80.00','')">
-        <img class="product-img" src="box-03.jpg" alt="Box Personalizado"/>
-        <div class="product-info">
-          <p class="product-name">Box Personalizado</p>
-          <p class="product-desc">Arma tu box ideal a tu gusto</p>
-          <div class="product-footer">
-            <span class="product-price">Desde S/ 80</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Personalizado','Desde S/ 80.00','')">›</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="pedirWA('Box Personalizado','Desde S/ 80.00','')">
-        <img class="product-img" src="box-04.jpg" alt="Box Personalizado"/>
-        <div class="product-info">
-          <p class="product-name">Box Personalizado</p>
-          <p class="product-desc">Arma tu box ideal a tu gusto</p>
-          <div class="product-footer">
-            <span class="product-price">Desde S/ 80</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Personalizado','Desde S/ 80.00','')">›</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="pedirWA('Box Personalizado','Desde S/ 80.00','')">
-        <img class="product-img" src="box-05.jpg" alt="Box Personalizado"/>
-        <div class="product-info">
-          <p class="product-name">Box Personalizado</p>
-          <p class="product-desc">Arma tu box ideal a tu gusto</p>
-          <div class="product-footer">
-            <span class="product-price">Desde S/ 80</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Personalizado','Desde S/ 80.00','')">›</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" onclick="pedirWA('Box Personalizado','Desde S/ 80.00','')">
-        <img class="product-img" src="box-06.jpg" alt="Box Personalizado"/>
-        <div class="product-info">
-          <p class="product-name">Box Personalizado</p>
-          <p class="product-desc">Arma tu box ideal a tu gusto</p>
-          <div class="product-footer">
-            <span class="product-price">Desde S/ 80</span>
-            <button class="product-btn" onclick="event.stopPropagation();pedirWA('Box Personalizado','Desde S/ 80.00','')">›</button>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -699,10 +666,7 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
   &copy; 2026 · Perú &nbsp;·&nbsp; Hecho a mano con amor 🌷
 </footer>
 
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a class="fab-wa" href="javascript:void(0)"
-   onclick="pedirWA('','','')"
-   title="Escríbenos por WhatsApp">
+<a class="fab-wa" href="javascript:void(0)" onclick="pedirWA('','','')" title="Escríbenos por WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.117 1.533 5.845L.057 23.98l6.305-1.654A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.373l-.36-.214-3.714.974.993-3.628-.235-.372A9.818 9.818 0 1112 21.818z"/>
@@ -712,10 +676,38 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
 <script>
   var numero = '51956744914';
 
+  /* ── SLIDESHOW AUTOMÁTICO CARD PROMO CAJA ── */
+  (function() {
+    var slider = document.getElementById('cajaSlider');
+    var dotsContainer = document.getElementById('cajaDots');
+    if (!slider) return;
+
+    var slides = slider.querySelectorAll('img');
+    var total = slides.length;
+    var current = 0;
+
+    for (var i = 0; i < total; i++) {
+      var d = document.createElement('span');
+      d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+      dotsContainer.appendChild(d);
+    }
+    var dots = dotsContainer.querySelectorAll('.slide-dot');
+
+    function goTo(n) {
+      slides[current].classList.remove('slide-active');
+      dots[current].classList.remove('active');
+      current = (n + total) % total;
+      slides[current].classList.add('slide-active');
+      dots[current].classList.add('active');
+    }
+
+    setInterval(function() { goTo(current + 1); }, 3000);
+  })();
+
+  /* ── WHATSAPP ── */
   function pedirWA(nombre, precio, url) {
     var texto;
     if (!nombre) {
-      // FAB general
       texto = '¡Hola! Quisiera más información sobre su catálogo del Día de la Madre 🌸';
     } else {
       texto =
@@ -732,20 +724,34 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     }, 1500);
   }
 
+  /* ── FILTRAR ── */
   function filtrar(cat, btn) {
     document.querySelectorAll('.cat-pill').forEach(function(p) { p.classList.remove('active'); });
     btn.classList.add('active');
-    document.querySelectorAll('.cat-section, .section-divider').forEach(function(el) { el.style.display = ''; });
+    document.querySelectorAll('.cat-section, .ultimas-section, .section-divider').forEach(function(el) { el.style.display = ''; });
     if (cat !== 'todos') {
       document.querySelectorAll('.cat-section').forEach(function(sec) {
         if (sec.dataset.cat !== cat) sec.style.display = 'none';
       });
+      var ultimasEl = document.getElementById('ultimas-unidades');
+      if (ultimasEl && cat !== 'ultimas') ultimasEl.style.display = 'none';
       document.querySelectorAll('.section-divider').forEach(function(div) { div.style.display = 'none'; });
-      var target = document.getElementById(cat);
+      var target = document.getElementById(cat === 'ultimas' ? 'ultimas-unidades' : cat);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
+  /* ── ADDON CAJA (detalle) ── */
+  var cajaSeleccionada = '';
+  var cajaExtra = '';
+  function seleccionarCaja(el, nombre, precio) {
+    document.querySelectorAll('.caja-opt').forEach(function(b) { b.classList.remove('selected'); });
+    el.classList.add('selected');
+    cajaSeleccionada = nombre === 'Sin caja' ? '' : nombre;
+    cajaExtra = nombre === 'Sin caja' ? '' : precio;
+  }
+
+  /* ── SCROLL NAVBAR ── */
   var navLinks = document.querySelectorAll('.nav-cats a');
   var sections = document.querySelectorAll('.cat-section');
   window.addEventListener('scroll', function() {
@@ -759,157 +765,33 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     });
   });
 
-  /* ─── RUTAS Y DETALLE DE PRODUCTO ─── */
+  /* ── CATÁLOGO ── */
   var productosCatalogo = [
-    {
-        "id": "ramos-limpiapipas-1",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas multicolor · 20 flores",
-        "precio": "S/ 38",
-        "imagen": "pipas-01.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-2",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas rosa y rojo · 15 flores",
-        "precio": "S/ 35",
-        "imagen": "pipas-02.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-3",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas pastel · 10 flores",
-        "precio": "S/ 25",
-        "imagen": "pipas-03.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-4",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas · 30 flores grandes",
-        "precio": "S/ 60",
-        "imagen": "pipas-cover.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-5",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas multicolor · 20 flores",
-        "precio": "S/ 38",
-        "imagen": "pipas-04.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-6",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas multicolor · 20 flores",
-        "precio": "S/ 38",
-        "imagen": "pipas-05.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-7",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas multicolor · 20 flores",
-        "precio": "S/ 38",
-        "imagen": "pipas-06.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "ramos-limpiapipas-8",
-        "categoria": "Ramo limpiapipas",
-        "descripcion": "Limpiapipas multicolor · 20 flores",
-        "precio": "S/ 38",
-        "imagen": "pipas-07.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-1",
-        "categoria": "Box",
-        "descripcion": "Caja + ramo cinta satinada",
-        "precio": "S/ 75",
-        "imagen": "box-cover.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-2",
-        "categoria": "Box",
-        "descripcion": "Caja + ramo + peluche",
-        "precio": "S/ 95",
-        "imagen": "box-01.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-3",
-        "categoria": "Box",
-        "descripcion": "Caja corazón + ramo + chocolates",
-        "precio": "S/ 110",
-        "imagen": "box-02.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-4",
-        "categoria": "Box",
-        "descripcion": "Arma tu box ideal a tu gusto",
-        "precio": "Desde S/ 80",
-        "imagen": "box-03.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-5",
-        "categoria": "Box",
-        "descripcion": "Arma tu box ideal a tu gusto",
-        "precio": "Desde S/ 80",
-        "imagen": "box-04.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-6",
-        "categoria": "Box",
-        "descripcion": "Arma tu box ideal a tu gusto",
-        "precio": "Desde S/ 80",
-        "imagen": "box-05.jpg",
-        "disponible": "Sí"
-    },
-    {
-        "id": "boxes-7",
-        "categoria": "Box",
-        "descripcion": "Arma tu box ideal a tu gusto",
-        "precio": "Desde S/ 80",
-        "imagen": "box-06.jpg",
-        "disponible": "Sí"
-    }
-];
+    { "id": "ramos-limpiapipas-1", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 2 Tulipanes\n• 1 Rosa\n• 1 Lirio\n• 5 Florcitas\n• 1 Amapola\n• Follaje\n• Tul con perlas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 43.00", "imagen": "pipas-01.jpg", "disponible": "Solo 3 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-2", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 3 Tulipanes\n• 3 Florcitas\n• 2 Amapolas\n• 1 Gerbera\n• Follaje\n• Tul con perlas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 59.00", "imagen": "pipas-02.jpg", "disponible": "Solo 3 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-3", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 3 Tulipanes\n• 1 Rosa\n• 1 Lirio\n• 5 Florcitas\n• 2 Amapolas\n• Follaje\n• Tul con perlas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 65.00", "imagen": "pipas-03.jpg", "disponible": "Solo 3 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-4", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 4 Tulipanes\n• 4 Mini tulipanes\n• 1 Lirio\n• 5 Florcitas\n• Follaje\n• Tul con perlas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 70.00", "imagen": "pipas-cover.jpg", "disponible": "Solo 5 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-5", "categoria": "Ramo limpiapipas", "descripcion": "Si deseas algo diferente, agrega una cajita para tu ramo único y valioso.", "precio": "S/ 18.00", "imagen": "pipas-04.jpg", "disponible": "Solo 8 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-6", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 2 Tulipanes\n• 4 Mini tulipanes\n• 1 Amapola\n• 5 Florcitas\n• Follaje\n• Tul con perlas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 45.00", "imagen": "pipas-05.jpg", "disponible": "Solo 3 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-7", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 2 Tulipanes\n• 2 Amapolas\n• 1 Lirio\n• 3 Florcitas\n• Tul con perlas\n• Follaje\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 43.00", "imagen": "pipas-06.jpg", "disponible": "Solo 3 disponibles", "ofrecerCaja": true },
+    { "id": "ramos-limpiapipas-8", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 3 Tulipanes\n• 1 Gerbera\n• 3 Florcitas\n• Tul con perlas\n• Follaje\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 30.00", "imagen": "pipas-07.jpg", "disponible": "Solo 5 disponibles", "ofrecerCaja": true },
+    { "id": "ultimas-1", "categoria": "Ramo Eterno", "descripcion": "Contiene:\n• 25 Rosas eternas\n• Frase con moño\n• Corona\n• Tarjeta\n• Mariposas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 116.00", "imagen": "ramo-eterno.jpg", "disponible": "¡Solo 1 disponible!", "ofrecerCaja": true }
+  ];
 
-  function obtenerProductoPorId(id) {
-    return productosCatalogo.find(function(p) { return p.id === id; });
-  }
-
-  function abrirRutaProducto(id) {
-    window.location.href = './?producto=' + encodeURIComponent(id);
-  }
+  function obtenerProductoPorId(id) { return productosCatalogo.find(function(p) { return p.id === id; }); }
+  function obtenerProductoPorImagen(img) { return productosCatalogo.find(function(p) { return p.imagen === img; }); }
+  function abrirRutaProducto(id) { window.location.href = './?producto=' + encodeURIComponent(id); }
 
   function activarClicksProductos() {
-    document.querySelectorAll('.product-card').forEach(function(card, index) {
-      var producto = productosCatalogo[index];
+    document.querySelectorAll('.product-card').forEach(function(card) {
+      if (card.classList.contains('caja-promo-card')) return;
+      var img = card.querySelector('.product-img');
+      if (!img) return;
+      var producto = obtenerProductoPorImagen(img.getAttribute('src'));
       if (!producto) return;
-
-      card.removeAttribute('onclick');
-      card.onclick = function(e) {
-        e.preventDefault();
-        abrirRutaProducto(producto.id);
-      };
-
-      card.querySelectorAll('.product-btn').forEach(function(btn) {
-        btn.removeAttribute('onclick');
-        btn.onclick = function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          abrirRutaProducto(producto.id);
-        };
-      });
+      card.onclick = function(e) { e.preventDefault(); abrirRutaProducto(producto.id); };
+      var btn = card.querySelector('.product-btn');
+      if (btn) btn.onclick = function(e) { e.preventDefault(); e.stopPropagation(); abrirRutaProducto(producto.id); };
     });
   }
 
@@ -917,45 +799,33 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     var params = new URLSearchParams(window.location.search);
     var id = params.get('producto');
     if (!id) return;
-
     var producto = obtenerProductoPorId(id);
-    if (!producto) {
-      window.location.href = window.location.pathname;
-      return;
-    }
-
+    if (!producto) { window.location.href = './'; return; }
     document.body.classList.add('modo-detalle');
     document.title = producto.categoria + ' | Expresiones J&M';
-
     document.getElementById('detalle-img').src = producto.imagen;
     document.getElementById('detalle-img').alt = producto.categoria;
     document.getElementById('detalle-categoria').textContent = producto.categoria;
     document.getElementById('detalle-precio').textContent = producto.precio;
     document.getElementById('detalle-descripcion').textContent = producto.descripcion;
-    document.getElementById('detalle-disponible').textContent = 'Disponible: ' + producto.disponible;
-
+    document.getElementById('detalle-disponible').textContent = producto.disponible;
+    var cajaBlock = document.getElementById('caja-addon-block');
+    if (producto.ofrecerCaja) {
+      cajaBlock.style.display = 'block';
+      document.querySelectorAll('.caja-opt')[0].classList.add('selected');
+    } else { cajaBlock.style.display = 'none'; }
+    cajaSeleccionada = ''; cajaExtra = '';
     document.getElementById('detalle-whatsapp').onclick = function() {
       var urlProducto = window.location.href;
-      var texto =
-        '¡Hola! Deseo comprar este producto.\n\n' +
-        '*Categoría:* ' + producto.categoria + '\n' +
-        '*Precio:* ' + producto.precio + '\n' +
-        '*Disponible:* ' + producto.disponible + '\n' +
-        '*URL del producto:* ' + urlProducto + '\n\n' +
-        'Quedo atento/a a la confirmación. 🌷';
-
+      var cajaLinea = cajaSeleccionada ? '\n*Agregar caja:* ' + cajaSeleccionada + ' (' + cajaExtra + ')' : '';
+      var texto = '¡Hola! Deseo comprar este producto.\n\n*Categoría:* ' + producto.categoria + '\n*Precio:* ' + producto.precio + cajaLinea + '\n*Stock:* ' + producto.disponible + '\n*URL del producto:* ' + urlProducto + '\n\nQuedo atento/a a la confirmación. 🌷';
       var t = encodeURIComponent(texto);
-      window.location.href = 'whatsapp://send?phone=' + numero + '&text=' + t;
-      setTimeout(function() {
-        window.location.href = 'https://wa.me/' + numero + '?text=' + t;
-      }, 1500);
+      window.location.href = 'https://wa.me/' + numero + '?text=' + t;
     };
   }
 
   activarClicksProductos();
   mostrarDetalleSiExiste();
-
 </script>
-
 </body>
 </html>
