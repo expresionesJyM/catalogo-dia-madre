@@ -415,15 +415,15 @@
 <body>
 
 <!--
-GUÍA PARA SUBIR A GITHUB PAGES:
-1. Crea la carpeta: CATALOGO-FLORES-ETERNAS
-2. Renombra este archivo como: index.html
-3. Sube este index.html dentro de CATALOGO-FLORES-ETERNAS/
-4. Sube las imágenes dentro de la misma carpeta CATALOGO-FLORES-ETERNAS/
-5. Ruta del catálogo:
-   https://expresionesjym.github.io/CATALOGO-FLORES-ETERNAS/
-6. Ejemplo de producto:
-   https://expresionesjym.github.io/CATALOGO-FLORES-ETERNAS/?producto=ramos-limpiapipas-1
+GUÍA FINAL:
+Este archivo debe llamarse index.html y estar dentro de la carpeta:
+catalogo-dia-madre/
+
+Ruta del catálogo:
+https://expresionesjym.github.io/catalogo-dia-madre/
+
+Ejemplo de producto:
+https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-1
 -->
 
 
@@ -471,7 +471,7 @@ GUÍA PARA SUBIR A GITHUB PAGES:
   <div class="detail-wrap">
     <img class="detail-image" id="detalle-img" src="" alt="Producto"/>
     <div class="detail-card">
-      <a href="/CATALOGO-FLORES-ETERNAS/" class="detail-back">‹ Volver al catálogo</a>
+      <a href="./" class="detail-back">‹ Volver al catálogo</a>
       <p class="detail-category" id="detalle-categoria"></p>
       <p class="detail-price" id="detalle-precio"></p>
       <p class="detail-description" id="detalle-descripcion"></p>
@@ -900,7 +900,7 @@ GUÍA PARA SUBIR A GITHUB PAGES:
   }
 
   function abrirRutaProducto(id) {
-    window.location.href = '/CATALOGO-FLORES-ETERNAS/?producto=' + encodeURIComponent(id);
+    window.location.href = './?producto=' + encodeURIComponent(id);
   }
 
   function activarClicksProductos() {
