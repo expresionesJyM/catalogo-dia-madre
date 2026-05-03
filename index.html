@@ -525,7 +525,6 @@
         <div class="slide-dots" id="cajaDots"></div>
         <div class="caja-promo-info">
           <p class="caja-promo-title">Agrega una caja<br>a tu ramo <em>✨ solo</em></p>
-          <p class="caja-promo-sub">Transforma tu ramo en un regalo aún más especial. Al seleccionar un ramo podrás elegir agregar la caja.</p>
           <p class="caja-promo-price-tag"><span>desde</span>S/ 18</p>
           <span class="caja-promo-deco">🎁</span>
         </div>
@@ -662,7 +661,7 @@
           <p class="product-name">13 Rosas</p>
           <p class="product-desc">13 Rosas · Últimas unidades</p>
           <div class="product-footer">
-            <span class="product-price">S/ 0.00</span>
+            <span class="product-price">S/ 65.00</span>
             <button class="product-btn">›</button>
           </div>
         </div>
@@ -676,7 +675,7 @@
           <p class="product-name">Girasoles</p>
           <p class="product-desc">Girasoles · Últimas unidades</p>
           <div class="product-footer">
-            <span class="product-price">S/ 0.00</span>
+            <span class="product-price">S/ 28.00</span>
             <button class="product-btn">›</button>
           </div>
         </div>
@@ -689,7 +688,7 @@
           <p class="product-name">Tulipancitos</p>
           <p class="product-desc">Tulipancitos · Últimas unidades</p>
           <div class="product-footer">
-            <span class="product-price">S/ 0.00</span>
+            <span class="product-price">S/ 16.00</span>
             <button class="product-btn">›</button>
           </div>
         </div>
@@ -748,7 +747,7 @@
   function pedirWA(nombre, precio, url) {
     var texto;
     if (!nombre) {
-      texto = '¡Hola! Quisiera más información sobre su catálogo del Día de la Madre 🌸';
+      texto = '¡Hola! Tengo interés sobre su catálogo del Día de la Madre 🌸';
     } else {
       texto =
         '¡Hola! Deseo adquirir este producto.\n\n' +
@@ -816,9 +815,9 @@
     { "id": "ramos-limpiapipas-7", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 2 Tulipanes\n• 2 Amapolas\n• 1 Lirio\n• 3 Florcitas\n• Tul con perlas\n• Follaje\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 43.00", "imagen": "pipas-06.jpg", "disponible": "Solo 3 disponibles", "ofrecerCaja": true },
     { "id": "ramos-limpiapipas-8", "categoria": "Ramo limpiapipas", "descripcion": "Contiene:\n• 3 Tulipanes\n• 1 Gerbera\n• 3 Florcitas\n• Tul con perlas\n• Follaje\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 30.00", "imagen": "pipas-07.jpg", "disponible": "Solo 5 disponibles", "ofrecerCaja": true },
     { "id": "ultimas-1", "categoria": "Ramo Eterno", "descripcion": "Contiene:\n• 25 Rosas eternas\n• Frase con moño\n• Corona\n• Tarjeta\n• Mariposas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 116.00", "imagen": "ultimos/25-rosas.png", "disponible": "¡Solo 1 disponible!", "ofrecerCaja": false },
-    { "id": "ultimas-2", "categoria": "13 Rosas", "descripcion": "13 Rosas · Últimas unidades", "precio": "S/ 0.00", "imagen": "ultimos/13-rosas.png", "disponible": "Últimas unidades", "ofrecerCaja": false },
-    { "id": "ultimas-4", "categoria": "Girasoles", "descripcion": "Girasoles · Últimas unidades", "precio": "S/ 0.00", "imagen": "ultimos/girasoles.png", "disponible": "Últimas unidades", "ofrecerCaja": false },
-    { "id": "ultimas-5", "categoria": "Tulipancitos", "descripcion": "Tulipancitos · Últimas unidades", "precio": "S/ 0.00", "imagen": "ultimos/tulipancitos.png", "disponible": "Últimas unidades", "ofrecerCaja": false }
+    { "id": "ultimas-2", "categoria": "13 Rosas", "descripcion": "Contiene:\n• 13 Rosas eternas\n• Frase con moño\n• Corona\n• Tarjeta\n• Mariposas\n• Envoltura coreana y lazo\n• Perlas\n• Polvo de Hadas (Brillitos)", "precio": "S/ 65.00", "imagen": "ultimos/13-rosas.png", "disponible": "Últimas unidades", "ofrecerCaja": false },
+    { "id": "ultimas-4", "categoria": "Girasoles", "descripcion": "Contiene:\n• 2 Girasoles\n• 2 Margaritas\n• Follaje\n• Envoltura coreana y lazo\n• Polvo de Hadas (Brillitos)", "precio": "S/ 28.00", "imagen": "ultimos/girasoles.png", "disponible": "Últimas unidades", "ofrecerCaja": false },
+    { "id": "ultimas-5", "categoria": "Tulipancitos", "descripcion": "Contiene:\n• Tulipan Tejido\n• Tarjeta\n• Envoltura coreana y lazo\n• Polvo de Hadas (Brillitos)", "precio": "S/ 28.00", "imagen": "ultimos/tulipancitos.png", "disponible": "Últimas unidades", "ofrecerCaja": false }
   ];
 
   function obtenerProductoPorId(id) { return productosCatalogo.find(function(p) { return p.id === id; }); }
