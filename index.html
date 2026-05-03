@@ -91,24 +91,21 @@
     /* ─── FAB WHATSAPP ─── */
     .fab-wa {
       position: fixed; bottom: 28px; right: 28px; z-index: 200;
-      width: 60px; height: 60px; border-radius: 50%;
-      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      border: 1.5px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      box-shadow: 0 6px 18px rgba(176,58,96,.14);
       cursor: pointer; text-decoration: none;
-      transition: transform .18s, box-shadow .18s;
-      animation: fabPulse 3s ease-in-out infinite;
+      transition: transform .18s, box-shadow .18s, background .18s;
+      backdrop-filter: blur(6px);
     }
     .fab-wa:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 32px rgba(37,211,102,.55);
-      animation: none;
+      transform: translateY(-2px);
+      background: var(--blush);
+      box-shadow: 0 10px 24px rgba(176,58,96,.18);
     }
-    .fab-wa svg { width: 30px; height: 30px; fill: #fff; }
-    @keyframes fabPulse {
-      0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); }
-      50%      { box-shadow: 0 6px 32px rgba(37,211,102,.7), 0 0 0 10px rgba(37,211,102,.12); }
-    }
+    .fab-wa svg { width: 26px; height: 26px; fill: var(--rose-dk); }
 
     /* ─── BANNER ─── */
     .banner {
@@ -261,12 +258,17 @@
     .product-btn {
       display: flex; align-items: center; justify-content: center;
       width: 34px; height: 34px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dk) 100%);
-      color: #fff; border: none; cursor: pointer; font-size: 1.1rem;
-      transition: transform .15s, box-shadow .15s;
-      box-shadow: 0 3px 10px rgba(212,84,122,.3);
+      background: var(--blush);
+      color: var(--rose-dk); border: 1.5px solid var(--border);
+      cursor: pointer; font-size: 1.05rem;
+      transition: transform .15s, box-shadow .15s, background .15s;
+      box-shadow: 0 3px 10px rgba(176,58,96,.10);
     }
-    .product-btn:hover { transform: scale(1.14); box-shadow: 0 5px 16px rgba(212,84,122,.45); }
+    .product-btn:hover {
+      transform: scale(1.06);
+      background: #f6dde6;
+      box-shadow: 0 5px 14px rgba(176,58,96,.16);
+    }
 
     .section-divider {
       height: 1px;
@@ -381,18 +383,19 @@
       width: 100%;
       min-height: 54px;
       border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-      color: #fff;
+      border: 1.5px solid var(--border);
+      background: linear-gradient(135deg, #f7e4ea 0%, #f2d8e1 100%);
+      color: var(--rose-dk);
       font-weight: 700;
       letter-spacing: .04em;
       cursor: pointer;
-      box-shadow: 0 8px 22px rgba(37,211,102,.25);
-      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 8px 20px rgba(176,58,96,.10);
+      transition: transform .15s, box-shadow .15s, background .15s;
     }
     .detail-wa:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(37,211,102,.35);
+      background: linear-gradient(135deg, #f5dbe4 0%, #ebcbd7 100%);
+      box-shadow: 0 10px 24px rgba(176,58,96,.16);
     }
     body.modo-detalle .banner,
     body.modo-detalle .cats-bar,
@@ -713,7 +716,7 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     var texto;
     if (!nombre) {
       // FAB general
-      texto = '¡Hola! Quisiera más información sobre sus productos 🌸';
+      texto = '¡Hola! Quisiera más información sobre su catálogo del Día de la Madre 🌸';
     } else {
       texto =
         '¡Hola! Deseo adquirir este producto.\n\n' +
@@ -761,7 +764,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-1",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Arcoíris",
         "descripcion": "Limpiapipas multicolor · 20 flores",
         "precio": "S/ 38",
         "imagen": "pipas-01.jpg",
@@ -770,7 +772,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-2",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Corazones",
         "descripcion": "Limpiapipas rosa y rojo · 15 flores",
         "precio": "S/ 35",
         "imagen": "pipas-02.jpg",
@@ -779,7 +780,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-3",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Mini Ramo",
         "descripcion": "Limpiapipas pastel · 10 flores",
         "precio": "S/ 25",
         "imagen": "pipas-03.jpg",
@@ -788,7 +788,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-4",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Gigante",
         "descripcion": "Limpiapipas · 30 flores grandes",
         "precio": "S/ 60",
         "imagen": "pipas-cover.jpg",
@@ -797,7 +796,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-5",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Arcoíris",
         "descripcion": "Limpiapipas multicolor · 20 flores",
         "precio": "S/ 38",
         "imagen": "pipas-04.jpg",
@@ -806,7 +804,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-6",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Arcoíris",
         "descripcion": "Limpiapipas multicolor · 20 flores",
         "precio": "S/ 38",
         "imagen": "pipas-05.jpg",
@@ -815,7 +812,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-7",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Arcoíris",
         "descripcion": "Limpiapipas multicolor · 20 flores",
         "precio": "S/ 38",
         "imagen": "pipas-06.jpg",
@@ -824,7 +820,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "ramos-limpiapipas-8",
         "categoria": "Ramo limpiapipas",
-        "nombre": "Ramo Arcoíris",
         "descripcion": "Limpiapipas multicolor · 20 flores",
         "precio": "S/ 38",
         "imagen": "pipas-07.jpg",
@@ -833,7 +828,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-1",
         "categoria": "Box",
-        "nombre": "Box Clásico",
         "descripcion": "Caja + ramo cinta satinada",
         "precio": "S/ 75",
         "imagen": "box-cover.jpg",
@@ -842,7 +836,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-2",
         "categoria": "Box",
-        "nombre": "Box Sorpresa",
         "descripcion": "Caja + ramo + peluche",
         "precio": "S/ 95",
         "imagen": "box-01.jpg",
@@ -851,7 +844,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-3",
         "categoria": "Box",
-        "nombre": "Box Amor",
         "descripcion": "Caja corazón + ramo + chocolates",
         "precio": "S/ 110",
         "imagen": "box-02.jpg",
@@ -860,7 +852,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-4",
         "categoria": "Box",
-        "nombre": "Box Personalizado",
         "descripcion": "Arma tu box ideal a tu gusto",
         "precio": "Desde S/ 80",
         "imagen": "box-03.jpg",
@@ -869,7 +860,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-5",
         "categoria": "Box",
-        "nombre": "Box Personalizado",
         "descripcion": "Arma tu box ideal a tu gusto",
         "precio": "Desde S/ 80",
         "imagen": "box-04.jpg",
@@ -878,7 +868,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-6",
         "categoria": "Box",
-        "nombre": "Box Personalizado",
         "descripcion": "Arma tu box ideal a tu gusto",
         "precio": "Desde S/ 80",
         "imagen": "box-05.jpg",
@@ -887,7 +876,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     {
         "id": "boxes-7",
         "categoria": "Box",
-        "nombre": "Box Personalizado",
         "descripcion": "Arma tu box ideal a tu gusto",
         "precio": "Desde S/ 80",
         "imagen": "box-06.jpg",
@@ -937,10 +925,10 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
     }
 
     document.body.classList.add('modo-detalle');
-    document.title = producto.nombre + ' | Expresiones J&M';
+    document.title = producto.categoria + ' | Expresiones J&M';
 
     document.getElementById('detalle-img').src = producto.imagen;
-    document.getElementById('detalle-img').alt = producto.nombre;
+    document.getElementById('detalle-img').alt = producto.categoria;
     document.getElementById('detalle-categoria').textContent = producto.categoria;
     document.getElementById('detalle-precio').textContent = producto.precio;
     document.getElementById('detalle-descripcion').textContent = producto.descripcion;
@@ -951,7 +939,6 @@ https://expresionesjym.github.io/catalogo-dia-madre/?producto=ramos-limpiapipas-
       var texto =
         '¡Hola! Deseo comprar este producto.\n\n' +
         '*Categoría:* ' + producto.categoria + '\n' +
-        '*Producto:* ' + producto.nombre + '\n' +
         '*Precio:* ' + producto.precio + '\n' +
         '*Disponible:* ' + producto.disponible + '\n' +
         '*URL del producto:* ' + urlProducto + '\n\n' +
