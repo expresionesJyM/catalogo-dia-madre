@@ -4,20 +4,18 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Open Graph / Vista previa al compartir -->
-  <meta property="og:type"        content="website"/>
-  <meta property="og:url"         content="https://expresionesjym.github.io/catalogo-dia-madre/"/>
-  <meta property="og:title"       content="Expresiones J&M — Día de la Madre 2026 🌸"/>
-  <meta property="og:description" content="Ramos únicos hechos a mano con todo el amor. Limpiapipas, rosas eternas, girasoles y más. ¡Regálale lo más especial a mamá! 🌷"/>
-  <meta property="og:image"       content="https://expresionesjym.github.io/catalogo-dia-madre/logo2.png"/>
+  <meta property="og:type"         content="website"/>
+  <meta property="og:url"          content="https://expresionesjym.github.io/catalogo-dia-madre/"/>
+  <meta property="og:title"        content="Expresiones J&M — Día de la Madre 2026 🌸"/>
+  <meta property="og:description"  content="Ramos únicos hechos a mano con todo el amor. Limpiapipas, rosas eternas, girasoles y más. ¡Regálale lo más especial a mamá! 🌷"/>
+  <meta property="og:image"        content="https://expresionesjym.github.io/catalogo-dia-madre/banner1.png"/>
   <meta property="og:image:width"  content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta property="og:locale"      content="es_PE"/>
-
-  <!-- WhatsApp usa estos como respaldo -->
+  <meta property="og:locale"       content="es_PE"/>
   <meta name="twitter:card"        content="summary_large_image"/>
   <meta name="twitter:title"       content="Expresiones J&M — Día de la Madre 2026 🌸"/>
   <meta name="twitter:description" content="Ramos únicos hechos a mano con todo el amor. ¡Regálale lo más especial a mamá! 🌷"/>
-  <meta name="twitter:image"       content="https://expresionesjym.github.io/catalogo-dia-madre/logo2.png"/>
+  <meta name="twitter:image"       content="https://expresionesjym.github.io/catalogo-dia-madre/banner1.png"/>
   <title>Expresiones J&M — Día de la Madre 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -174,7 +172,7 @@
     .cat-pill.active { background: var(--rose); color: #fff; border-color: var(--rose); box-shadow: 0 2px 10px rgba(212,84,122,.3); }
 
     /* ── SECCIONES ── */
-    .cat-section   { padding: 48px 32px 20px; position: relative; z-index: 1; }
+    .cat-section { padding: 48px 32px 20px; position: relative; z-index: 1; }
     .cat-section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; }
     .cat-section-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--dark); }
     .cat-section-title em { font-style: italic; color: var(--rose); }
@@ -349,9 +347,9 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 800px) {
-      .detail-page  { padding: 24px 16px 60px; }
-      .detail-wrap  { grid-template-columns: 1fr; gap: 22px; }
-      .detail-card  { padding: 22px; }
+      .detail-page { padding: 24px 16px 60px; }
+      .detail-wrap { grid-template-columns: 1fr; gap: 22px; }
+      .detail-card { padding: 22px; }
     }
     @media (max-width: 640px) {
       nav              { padding: 0 16px; }
@@ -380,6 +378,7 @@
   <ul class="nav-cats">
     <li><a href="#ramos-limpiapipas" class="active">Limpiapipas</a></li>
     <li><a href="#ultimas-unidades">Últimas</a></li>
+    <li><a href="#boxes">Boxes</a></li>
   </ul>
 </nav>
 
@@ -403,6 +402,7 @@
   <button class="cat-pill active" onclick="filtrar('todos', this)">Todos</button>
   <button class="cat-pill" onclick="filtrar('ramos-limpiapipas', this)">Ramos Limpiapipas</button>
   <button class="cat-pill" onclick="filtrar('ultimas', this)">🔥 Últimas unidades</button>
+  <button class="cat-pill" onclick="filtrar('boxes', this)">🎁 Boxes</button>
 </div>
 
 <!-- ── DETALLE (oculto por defecto) ── -->
@@ -410,11 +410,11 @@
   <div class="detail-wrap">
     <img class="detail-image" id="detalle-img" src="" alt="Producto"/>
     <div class="detail-card">
-      <a href="./" class="detail-back">‹ Volver al catálogo</a>
-      <p class="detail-category"  id="detalle-categoria"></p>
-      <p class="detail-price"     id="detalle-precio"></p>
+      <a href="./" class="detail-back">&#8249; Volver al catálogo</a>
+      <p class="detail-category"    id="detalle-categoria"></p>
+      <p class="detail-price"       id="detalle-precio"></p>
       <p class="detail-description" id="detalle-descripcion"></p>
-      <span class="detail-status" id="detalle-disponible"></span>
+      <span class="detail-status"   id="detalle-disponible"></span>
       <div class="caja-addon" id="caja-addon-block" style="display:none">
         <p class="caja-addon-title">¿Deseas agregar una caja?</p>
         <div class="caja-options">
@@ -441,12 +441,12 @@
       <div class="caja-promo-card">
         <span class="caja-promo-badge">📦 ¡Dale más amor!</span>
         <div class="caja-promo-slider" id="cajaSlider">
-          <img src="pipas-01-caja.jpg"   alt="Ramo con caja 1" class="slide-active"/>
-          <img src="pipas-02-caja.jpg"   alt="Ramo con caja 2"/>
-          <img src="pipas-03-caja.jpg"   alt="Ramo con caja 3"/>
+          <img src="pipas-01-caja.jpg"    alt="Ramo con caja 1" class="slide-active"/>
+          <img src="pipas-02-caja.jpg"    alt="Ramo con caja 2"/>
+          <img src="pipas-03-caja.jpg"    alt="Ramo con caja 3"/>
           <img src="pipas-cover-caja.jpg" alt="Ramo con caja 4"/>
-          <img src="pipas-04-caja.jpg"   alt="Ramo con caja 5"/>
-          <img src="pipas-05-caja.jpg"   alt="Ramo con caja 6"/>
+          <img src="pipas-04-caja.jpg"    alt="Ramo con caja 5"/>
+          <img src="pipas-05-caja.jpg"    alt="Ramo con caja 6"/>
         </div>
         <div class="slide-dots" id="cajaDots"></div>
         <div class="caja-promo-info">
@@ -455,7 +455,7 @@
           <span class="caja-promo-deco">🎁</span>
         </div>
       </div>
-      <!-- Las tarjetas de productos se inyectan aquí por JS -->
+      <!-- Tarjetas inyectadas por JS -->
     </div>
   </section>
 
@@ -468,6 +468,19 @@
       <span class="ultimas-badge">🔥 Casi agotado</span>
     </div>
     <div class="ultimas-grid" id="grid-ultimas">
+      <!-- Inyectado por JS -->
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Boxes -->
+  <section class="cat-section" id="boxes" data-cat="boxes">
+    <div class="cat-section-header">
+      <h2 class="cat-section-title">Ramo Eterno <em>en caja</em></h2>
+      <span class="cat-count" id="count-boxes"></span>
+    </div>
+    <div class="products-grid" id="grid-boxes">
       <!-- Inyectado por JS -->
     </div>
   </section>
@@ -497,7 +510,7 @@
 
 var WHATSAPP_NUMERO = '51956744914';
 
-// Productos limpiapipas
+// ── Ramos limpiapipas ──
 var PRODUCTOS_LIMPIAPIPAS = [
   {
     id: 'ramos-limpiapipas-1',
@@ -566,7 +579,7 @@ var PRODUCTOS_LIMPIAPIPAS = [
   }
 ];
 
-// Últimas unidades
+// ── Últimas unidades ──
 var PRODUCTOS_ULTIMAS = [
   {
     id: 'ultimas-1',
@@ -610,20 +623,38 @@ var PRODUCTOS_ULTIMAS = [
   }
 ];
 
+// ── Boxes ──
+var PRODUCTOS_BOXES = [
+  {
+    id: 'boxes-1',
+    imagen: 'boxs/box-corderito.png',
+    categoria: 'Box Corderito',
+    precio: 'S/ 58.00',
+    disponible: 'Solo 3 disponibles',
+    badgeLabel: '🐑 Solo 3 disponibles',
+    descripcion: 'Contiene:\n• Caja decorada\n• Frase con moño\n• Peluche cordero\n• Tarjeta\n• Ramo tulipán tejido\n• Luces\n• Viruta\n• Polvo de Hadas (Brillitos)',
+    ofrecerCaja: false
+  },
+  {
+    id: 'boxes-2',
+    imagen: 'boxs/box-lotso.png',
+    categoria: 'Box Lotso Dormilón',
+    precio: 'S/ 68.00',
+    disponible: 'Solo 2 disponibles',
+    badgeLabel: '🧸 Solo 2 disponibles',
+    descripcion: 'Contiene:\n• Caja decorada\n• Frase con moño\n• Peluche Lotso 20cm\n• Tarjeta\n• Ramo tulipán tejido\n• Luces\n• Viruta\n• Polvo de Hadas (Brillitos)',
+    ofrecerCaja: false
+  }
+];
+
 /* ══════════════════════════════════════════════
    ÍNDICE UNIFICADO (para la página de detalle)
 ══════════════════════════════════════════════ */
 var TODOS_LOS_PRODUCTOS = (function () {
   var mapa = {};
-
-  PRODUCTOS_LIMPIAPIPAS.forEach(function (p) {
-    mapa[p.id] = Object.assign({ categoria: 'Ramo limpiapipas' }, p);
-  });
-
-  PRODUCTOS_ULTIMAS.forEach(function (p) {
-    mapa[p.id] = p;
-  });
-
+  PRODUCTOS_LIMPIAPIPAS.forEach(function (p) { mapa[p.id] = Object.assign({ categoria: 'Ramo limpiapipas' }, p); });
+  PRODUCTOS_ULTIMAS.forEach(function (p) { mapa[p.id] = p; });
+  PRODUCTOS_BOXES.forEach(function (p)   { mapa[p.id] = p; });
   return mapa;
 }());
 
@@ -633,36 +664,25 @@ var TODOS_LOS_PRODUCTOS = (function () {
 function crearCardLimpiapipas(producto) {
   var card = document.createElement('div');
   card.className = 'product-card';
-
-  var badgeHTML = producto.badge
-    ? '<span class="product-badge">' + producto.badge + '</span>'
-    : '';
-
   card.innerHTML =
-    badgeHTML +
+    (producto.badge ? '<span class="product-badge">' + producto.badge + '</span>' : '') +
     '<img class="product-img" src="' + producto.imagen + '" alt="Producto"/>' +
     '<div class="product-info">' +
       '<p class="product-desc">' + producto.disponible + '</p>' +
       '<div class="product-footer">' +
         '<span class="product-price">' + producto.precio + '</span>' +
-        '<button class="product-btn">›</button>' +
+        '<button class="product-btn">&#8250;</button>' +
       '</div>' +
     '</div>';
-
   var onClick = function (e) { e.preventDefault(); irADetalle(producto.id); };
   card.addEventListener('click', onClick);
-  card.querySelector('.product-btn').addEventListener('click', function (e) {
-    e.stopPropagation();
-    onClick(e);
-  });
-
+  card.querySelector('.product-btn').addEventListener('click', function (e) { e.stopPropagation(); onClick(e); });
   return card;
 }
 
 function crearCardUltima(producto) {
   var card = document.createElement('div');
   card.className = 'ultima-card product-card';
-
   card.innerHTML =
     '<span class="ultima-badge-agotando">' + producto.badgeLabel + '</span>' +
     '<img class="product-img" src="' + producto.imagen + '" alt="' + producto.categoria + '"/>' +
@@ -670,31 +690,26 @@ function crearCardUltima(producto) {
       '<p class="product-desc">' + producto.disponible + '</p>' +
       '<div class="product-footer">' +
         '<span class="product-price">' + producto.precio + '</span>' +
-        '<button class="product-btn">›</button>' +
+        '<button class="product-btn">&#8250;</button>' +
       '</div>' +
     '</div>';
-
   var onClick = function (e) { e.preventDefault(); irADetalle(producto.id); };
   card.addEventListener('click', onClick);
-  card.querySelector('.product-btn').addEventListener('click', function (e) {
-    e.stopPropagation();
-    onClick(e);
-  });
-
+  card.querySelector('.product-btn').addEventListener('click', function (e) { e.stopPropagation(); onClick(e); });
   return card;
 }
 
 function renderCatalogo() {
   var gridLimpiapipas = document.getElementById('grid-limpiapipas');
-  PRODUCTOS_LIMPIAPIPAS.forEach(function (p) {
-    gridLimpiapipas.appendChild(crearCardLimpiapipas(p));
-  });
+  PRODUCTOS_LIMPIAPIPAS.forEach(function (p) { gridLimpiapipas.appendChild(crearCardLimpiapipas(p)); });
   document.getElementById('count-limpiapipas').textContent = PRODUCTOS_LIMPIAPIPAS.length + ' productos';
 
   var gridUltimas = document.getElementById('grid-ultimas');
-  PRODUCTOS_ULTIMAS.forEach(function (p) {
-    gridUltimas.appendChild(crearCardUltima(p));
-  });
+  PRODUCTOS_ULTIMAS.forEach(function (p) { gridUltimas.appendChild(crearCardUltima(p)); });
+
+  var gridBoxes = document.getElementById('grid-boxes');
+  PRODUCTOS_BOXES.forEach(function (p) { gridBoxes.appendChild(crearCardUltima(p)); });
+  document.getElementById('count-boxes').textContent = PRODUCTOS_BOXES.length + ' productos';
 }
 
 /* ══════════════════════════════════════════════
@@ -704,18 +719,15 @@ function initSlideshow() {
   var slider = document.getElementById('cajaSlider');
   var dotsContainer = document.getElementById('cajaDots');
   if (!slider) return;
-
-  var slides  = slider.querySelectorAll('img');
-  var total   = slides.length;
+  var slides = slider.querySelectorAll('img');
+  var total  = slides.length;
   var current = 0;
-
   for (var i = 0; i < total; i++) {
     var dot = document.createElement('span');
     dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
     dotsContainer.appendChild(dot);
   }
   var dots = dotsContainer.querySelectorAll('.slide-dot');
-
   function goTo(n) {
     slides[current].classList.remove('slide-active');
     dots[current].classList.remove('active');
@@ -723,7 +735,6 @@ function initSlideshow() {
     slides[current].classList.add('slide-active');
     dots[current].classList.add('active');
   }
-
   setInterval(function () { goTo(current + 1); }, 3000);
 }
 
@@ -732,7 +743,6 @@ function initSlideshow() {
 ══════════════════════════════════════════════ */
 function abrirWA(categoria, precio, urlProducto) {
   var texto;
-
   if (!categoria) {
     texto = '¡Hola! Tengo interés sobre su catálogo del Día de la Madre 🌸';
   } else {
@@ -742,12 +752,11 @@ function abrirWA(categoria, precio, urlProducto) {
     texto =
       '¡Hola! Deseo comprar este producto.\n\n' +
       '*Categoría:* ' + categoria + '\n' +
-      '*Precio:* ' + precio +
-      cajaLinea + '\n' +
+      '*Precio:* '    + precio    +
+      cajaLinea       + '\n'      +
       '*URL del producto:* ' + urlProducto + '\n\n' +
       'Quedo atento/a a la confirmación. 🌷';
   }
-
   var t = encodeURIComponent(texto);
   window.location.href = 'whatsapp://send?phone=' + WHATSAPP_NUMERO + '&text=' + t;
   setTimeout(function () {
@@ -761,22 +770,16 @@ function abrirWA(categoria, precio, urlProducto) {
 function filtrar(cat, btn) {
   document.querySelectorAll('.cat-pill').forEach(function (p) { p.classList.remove('active'); });
   btn.classList.add('active');
-
-  // mostrar todo primero
   document.querySelectorAll('.cat-section, .ultimas-section, .section-divider').forEach(function (el) {
     el.style.display = '';
   });
-
   if (cat === 'todos') return;
-
-  // ocultar lo que no corresponde
   document.querySelectorAll('.cat-section').forEach(function (sec) {
     if (sec.dataset.cat !== cat) sec.style.display = 'none';
   });
   var ultimasEl = document.getElementById('ultimas-unidades');
   if (ultimasEl && cat !== 'ultimas') ultimasEl.style.display = 'none';
   document.querySelectorAll('.section-divider').forEach(function (div) { div.style.display = 'none'; });
-
   var targetId = cat === 'ultimas' ? 'ultimas-unidades' : cat;
   var target   = document.getElementById(targetId);
   if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -801,7 +804,6 @@ function seleccionarCaja(el, nombre, precio) {
 function initNavScroll() {
   var navLinks = document.querySelectorAll('.nav-cats a');
   var sections = document.querySelectorAll('.cat-section');
-
   window.addEventListener('scroll', function () {
     var scrollY = window.scrollY + 140;
     sections.forEach(function (sec) {
@@ -825,20 +827,16 @@ function mostrarDetalle() {
   var params  = new URLSearchParams(window.location.search);
   var id      = params.get('producto');
   if (!id) return;
-
   var producto = TODOS_LOS_PRODUCTOS[id];
   if (!producto) { window.location.href = './'; return; }
-
   document.body.classList.add('modo-detalle');
   document.title = producto.categoria + ' | Expresiones J&M';
-
-  document.getElementById('detalle-img').src         = producto.imagen;
-  document.getElementById('detalle-img').alt         = producto.categoria;
+  document.getElementById('detalle-img').src               = producto.imagen;
+  document.getElementById('detalle-img').alt               = producto.categoria;
   document.getElementById('detalle-categoria').textContent  = producto.categoria;
   document.getElementById('detalle-precio').textContent     = producto.precio;
   document.getElementById('detalle-descripcion').textContent = producto.descripcion;
-  document.getElementById('detalle-disponible').textContent = producto.disponible;
-
+  document.getElementById('detalle-disponible').textContent  = producto.disponible;
   var cajaBlock = document.getElementById('caja-addon-block');
   if (producto.ofrecerCaja) {
     cajaBlock.style.display = 'block';
@@ -846,10 +844,8 @@ function mostrarDetalle() {
   } else {
     cajaBlock.style.display = 'none';
   }
-
   cajaSeleccionada = '';
   cajaExtra = '';
-
   document.getElementById('detalle-whatsapp').onclick = function () {
     abrirWA(producto.categoria, producto.precio, window.location.href);
   };
